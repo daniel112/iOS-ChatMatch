@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  ChatMatch
 //
 //  Created by Daniel Yo on 9/19/18.
@@ -8,18 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.setup()
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Private API
+    private func setup() {
+        self.view.backgroundColor = UIColor.white
+        
+    }
 
 
 }
-

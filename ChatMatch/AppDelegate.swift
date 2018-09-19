@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SWRevealViewController
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        UINavigationBar.appearance().barTintColor = AppTheme().mainColor()
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        let navigationController:UINavigationController = UINavigationController.init(rootViewController: HomeViewController())
+        let rootVC = SWRevealViewController.init(rearViewController: SideMenuViewController(), frontViewController: navigationController)
+        
+        window!.rootViewController = rootVC!
+        
+        window!.makeKeyAndVisible()
+        
         return true
     }
 
