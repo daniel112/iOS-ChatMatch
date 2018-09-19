@@ -1,0 +1,28 @@
+PODS:
+  - IGListKit (3.4.0):
+    - IGListKit/Default (= 3.4.0)
+  - IGListKit/Default (3.4.0):
+    - IGListKit/Diffing
+  - IGListKit/Diffing (3.4.0)
+  - SnapKit (4.0.0)
+  - SWRevealViewController (2.3.0)
+
+DEPENDENCIES:
+  - IGListKit (~> 3.0)
+  - SnapKit (~> 4.0.0)
+  - SWRevealViewController (~> 2.3.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - IGListKit
+    - SnapKit
+    - SWRevealViewController
+
+SPEC CHECKSUMS:
+  IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
+
+PODFILE CHECKSUM: 163ed2f7dc29fed29b28482885d760c6b6811d57
+
+COCOAPODS: 1.5.0
