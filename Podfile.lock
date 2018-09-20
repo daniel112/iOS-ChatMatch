@@ -13,7 +13,7 @@ DEPENDENCIES:
   - SWRevealViewController (~> 2.3.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - IGListKit
     - SnapKit
     - SWRevealViewController
@@ -25,4 +25,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 163ed2f7dc29fed29b28482885d760c6b6811d57
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

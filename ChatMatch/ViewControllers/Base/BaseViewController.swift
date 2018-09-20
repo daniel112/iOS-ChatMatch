@@ -14,7 +14,6 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,9 +28,6 @@ class BaseViewController: UIViewController {
 
         //set bg color
         view.backgroundColor = UIColor.white
-
-        // Navigation - Status Bar Style
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         
         // Navigation - Menu Button
         if (self.navigationController!.viewControllers[0] == self ) {
@@ -49,5 +45,7 @@ class BaseViewController: UIViewController {
     @objc func buttonMenu_touchUpInside(sender: UIBarButtonItem) {
         revealViewController().revealToggle(animated: true)
     }
+    
+    
 
 }

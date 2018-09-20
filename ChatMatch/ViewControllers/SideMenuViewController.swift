@@ -10,9 +10,12 @@ import UIKit
 import IGListKit
 import SnapKit
 import SWRevealViewController
+import SafariServices
+
 class SideMenuViewController: UIViewController, ListAdapterDataSource, SideMenuOptionSectionControllerDelegate {
     
     //MARK: variables
+    let websiteURL:String = "https://chatmatch.me/"
     var sideMenuObjects:Array = [ListDiffable]()
     lazy var adapter: ListAdapter = {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
@@ -50,8 +53,14 @@ class SideMenuViewController: UIViewController, ListAdapterDataSource, SideMenuO
         //adapter
         self.adapter.collectionView = self.collectionView
         self.adapter.dataSource = self
-        
-        
+    }
+    
+    private func navigateToWebView(withURLstring urlString:String) {
+        if let url = URL(string: urlString) {
+            let vc = SFSafariViewController(url: url)
+            vc.preferredBarTintColor = AppTheme().mainColor()
+            self.present(vc, animated: true)
+        }
     }
     
     private func createSideMenuObjects() {
@@ -87,7 +96,7 @@ class SideMenuViewController: UIViewController, ListAdapterDataSource, SideMenuO
     // SideMenuOptionSectionControllerDelegate
     func didSelectSideMenuOptionItem(item: SideMenuItem) {
         if (item.name == "Website") {
-
+            self.navigateToWebView(withURLstring: self.websiteURL)
         } else if (item.name == "Home") {
             self.revealViewController().pushFrontViewController(UINavigationController.init(rootViewController: HomeViewController()), animated: true)
         }
