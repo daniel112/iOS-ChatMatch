@@ -30,13 +30,15 @@ class SideMenuItemCollectionViewCell: UICollectionViewCell {
     }()
     lazy private var label:UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont(name: AppTheme().mainFontName(), size: 16)
         label.textColor = UIColor.white
         return label
     }()
 
     fileprivate var imageView:UIImageView = {
         let imageView = UIImageView()
+        imageView.tintColor = UIColor.white
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -51,7 +53,7 @@ class SideMenuItemCollectionViewCell: UICollectionViewCell {
     // MARK: Private API
     override var isHighlighted: Bool {
         didSet {
-            self.contentView.backgroundColor = isHighlighted ? UIColor.gray : nil
+            self.contentView.backgroundColor = isHighlighted ? AppTheme().secondaryColor() : nil
         }
     }
     
@@ -77,14 +79,14 @@ class SideMenuItemCollectionViewCell: UICollectionViewCell {
             self.imageView.snp.makeConstraints({ (make) in
                 make.top.left.equalToSuperview().offset(10)
                 make.centerY.equalToSuperview()
-                make.width.equalTo(40)
-                make.height.equalTo(40)
+                make.width.equalTo(24)
+                make.height.equalTo(24)
             })
             // title
             self.wrapper.addSubview(self.label)
             self.label.snp.makeConstraints({ (make) in
                 make.top.equalToSuperview().offset(10)
-                make.left.equalTo(self.imageView.snp.right)
+                make.left.equalTo(self.imageView.snp.right).offset(10)
                 make.centerY.equalToSuperview()
             })
             

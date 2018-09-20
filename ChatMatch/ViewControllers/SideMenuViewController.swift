@@ -65,10 +65,10 @@ class SideMenuViewController: UIViewController, ListAdapterDataSource, SideMenuO
     
     private func createSideMenuObjects() {
         //header
-        self.sideMenuObjects.append(SideMenuHeader.init(withName: "App Title", image: nil, version: "1.0.0")!)
+        self.sideMenuObjects.append(SideMenuHeader.init(withName: "ChatMatch", image: nil, version: "1.0.0")!)
         //options
-        self.sideMenuObjects.append(SideMenuItem.init(withName: "Home", image: nil)!)
-        self.sideMenuObjects.append(SideMenuItem.init(withName: "Website", image:nil)!)
+        self.sideMenuObjects.append(SideMenuItem.init(withName: "Home", image: UIImage(named: "sidemenu_home"))!)
+        self.sideMenuObjects.append(SideMenuItem.init(withName: "Website", image:UIImage(named: "sidemenu_desktop"))!)
     }
     
     //MARK: Delegates
