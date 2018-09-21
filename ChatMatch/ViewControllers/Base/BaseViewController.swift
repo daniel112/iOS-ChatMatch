@@ -8,6 +8,7 @@
 
 import UIKit
 import SWRevealViewController
+import SafariServices
 
 class BaseViewController: UIViewController {
 
@@ -27,7 +28,7 @@ class BaseViewController: UIViewController {
         let menuImage = UIImage(named: "nav_menu")!.withRenderingMode(.alwaysTemplate)
 
         //set bg color
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = AppTheme().backgroundColor()
         
         // Navigation - Menu Button
         if (self.navigationController!.viewControllers[0] == self ) {
@@ -46,6 +47,14 @@ class BaseViewController: UIViewController {
         revealViewController().revealToggle(animated: true)
     }
     
+    // MARK: Public API
+    internal func navigateToWebView(withURLstring urlString:String) {
+        if let url = URL(string: urlString) {
+            let vc = SFSafariViewController(url: url)
+            vc.preferredBarTintColor = AppTheme().mainColor()
+            self.present(vc, animated: true)
+        }
+    }
     
 
 }

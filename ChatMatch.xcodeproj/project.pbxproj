@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		130F41E3215318BA00E71314 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130F41E2215318BA00E71314 /* SplashScreenViewController.swift */; };
 		376862F693B36A31E9D65AD6 /* Pods_ChatMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AE9DB8892AD85AE0D34D1B /* Pods_ChatMatch.framework */; };
+		6C21C59B2155ADEE00FCEEAF /* howitworks.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6C21C59A2155ADEE00FCEEAF /* howitworks.mp4 */; };
 		6C9305C02152FA7100FCD286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9305BF2152FA7100FCD286 /* AppDelegate.swift */; };
 		6C9305C72152FA7300FCD286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C9305C62152FA7300FCD286 /* Assets.xcassets */; };
 		6C9305CA2152FA7300FCD286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C9305C82152FA7300FCD286 /* LaunchScreen.storyboard */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		130F41E2215318BA00E71314 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		6C21C59A2155ADEE00FCEEAF /* howitworks.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = howitworks.mp4; sourceTree = "<group>"; };
 		6C9305BC2152FA7100FCD286 /* ChatMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C9305BF2152FA7100FCD286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C9305C62152FA7300FCD286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +62,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C21C5972155ADB300FCEEAF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6C21C5982155ADD200FCEEAF /* Media */,
+				6C9305C82152FA7300FCD286 /* LaunchScreen.storyboard */,
+				6C9305C62152FA7300FCD286 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6C21C5982155ADD200FCEEAF /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				6C21C5992155ADDA00FCEEAF /* Videos */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		6C21C5992155ADDA00FCEEAF /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				6C21C59A2155ADEE00FCEEAF /* howitworks.mp4 */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
 		6C9305B32152FA7100FCD286 = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +114,7 @@
 				6C9305E321530A6700FCD286 /* Models */,
 				6C9305D12153070700FCD286 /* ViewControllers */,
 				6C9305D6215307AF00FCD286 /* Components */,
-				6C9305C62152FA7300FCD286 /* Assets.xcassets */,
-				6C9305C82152FA7300FCD286 /* LaunchScreen.storyboard */,
+				6C21C5972155ADB300FCEEAF /* Resources */,
 				6C9305CB2152FA7300FCD286 /* Info.plist */,
 			);
 			path = ChatMatch;
@@ -275,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C9305CA2152FA7300FCD286 /* LaunchScreen.storyboard in Resources */,
+				6C21C59B2155ADEE00FCEEAF /* howitworks.mp4 in Resources */,
 				6C9305C72152FA7300FCD286 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

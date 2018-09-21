@@ -18,6 +18,14 @@ class AppTheme: NSObject {
         return UIColor(hexString: "#1a546b")
     }
     
+    public func backgroundColor() -> UIColor {
+        return UIColor(hexString: "#0e6c85")
+    }
+    
+    public func selectedItemColor() -> UIColor {
+        return UIColor(hexString: "#265a88")
+    }
+    
     public func mainFontName() -> String {
         return "Helvetica"
     }
