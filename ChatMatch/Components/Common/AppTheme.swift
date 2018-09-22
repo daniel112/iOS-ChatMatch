@@ -27,7 +27,7 @@ class AppTheme: NSObject {
     }
     
     public func mainFontName() -> String {
-        return "Helvetica"
+        return "Lato-Regular"
     }
 
 }

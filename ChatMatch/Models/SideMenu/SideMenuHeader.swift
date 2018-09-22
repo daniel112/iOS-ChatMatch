@@ -12,12 +12,10 @@ import IGListKit
 class SideMenuHeader: NSObject {
     var name:String?
     var image:UIImage?
-    var version:String?
     
-    init?(withName name:String, image:UIImage?, version:String?) {
+    init?(withName name:String, image:UIImage?) {
         self.name = name
         self.image = image
-        self.version = version
     }
 }
 

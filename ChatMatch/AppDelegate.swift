@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
         UINavigationBar.appearance().barTintColor = AppTheme().mainColor()
-        
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+
         let navigationController:UINavigationController = UINavigationController.init(rootViewController: HomeViewController())
         let rootVC = SWRevealViewController.init(rearViewController: SideMenuViewController(), frontViewController: navigationController)
         

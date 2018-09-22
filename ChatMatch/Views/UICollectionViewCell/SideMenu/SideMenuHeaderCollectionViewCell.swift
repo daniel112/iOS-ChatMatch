@@ -17,10 +17,6 @@ class SideMenuHeaderCollectionViewCell: UICollectionViewCell {
         get { return self.label.text }
         set { self.label.text = newValue }
     }
-    public var version:String? {
-        get { return self.labelVersion.text }
-        set { self.labelVersion.text = newValue }
-    }
     public var image:UIImage? {
         get { return self.imageView.image }
         set { self.imageView.image = newValue?.withRenderingMode(.alwaysTemplate) }
@@ -34,16 +30,12 @@ class SideMenuHeaderCollectionViewCell: UICollectionViewCell {
     }()
     lazy private var label:UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont(name: "Lato-Bold", size: 17)
         label.textColor = UIColor.white
+        
         return label
     }()
-    lazy private var labelVersion:UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.textColor = UIColor.white
-        return label
-    }()
+
     fileprivate var imageView:UIImageView = {
         let imageView = UIImageView()
         return imageView
@@ -61,10 +53,9 @@ class SideMenuHeaderCollectionViewCell: UICollectionViewCell {
 
     
     // MARK: Public API
-    func updateWithRevealWidth(revealWidth:CGFloat, name:String?, version:String?, image:UIImage?) {
+    func updateWithRevealWidth(revealWidth:CGFloat, name:String?, image:UIImage?) {
         
         self.name = name
-        self.version = version
         self.image = image
 
         if (self.revealWidth != revealWidth) {
@@ -91,14 +82,6 @@ class SideMenuHeaderCollectionViewCell: UICollectionViewCell {
             self.label.snp.makeConstraints({ (make) in
                 make.top.equalTo(self.imageView.snp.bottom)
                 make.centerX.equalToSuperview()
-            })
-            
-            // version
-            self.wrapper.addSubview(self.labelVersion)
-            self.labelVersion.snp.makeConstraints({ (make) in
-                make.top.equalTo(self.label.snp.bottom)
-                make.centerX.equalToSuperview()
-                make.bottom.equalToSuperview()
             })
             
         }

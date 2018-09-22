@@ -33,7 +33,7 @@ class SideMenuHeaderSectionController: ListSectionController {
         
         let cell:SideMenuHeaderCollectionViewCell = self.collectionContext!.dequeueReusableCell(of: SideMenuHeaderCollectionViewCell.self, for: self, at: index) as! SideMenuHeaderCollectionViewCell
         
-        cell.updateWithRevealWidth(revealWidth: self.revealWidth!, name: self.headerObject!.name, version: self.headerObject!.version, image: self.headerObject!.image)
+        cell.updateWithRevealWidth(revealWidth: self.revealWidth!, name: self.headerObject!.name, image: self.headerObject!.image)
 
         return cell
         

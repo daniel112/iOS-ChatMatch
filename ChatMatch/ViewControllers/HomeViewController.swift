@@ -15,7 +15,7 @@ class HomeViewController: BaseViewController {
     // MARK: - Properties
     var labelMessage:UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont(name: "Lato-Bold", size: 25)
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
@@ -27,6 +27,7 @@ class HomeViewController: BaseViewController {
     private var buttonLogin:UIButton = {
         let button = UIButton()
         button.setTitle("LOG IN", for: UIControlState.normal)
+        button.titleLabel?.font = UIFont(name: AppTheme().mainFontName(), size: 20)
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.textColor = UIColor.white
         button.layer.cornerRadius = 5;
@@ -40,6 +41,7 @@ class HomeViewController: BaseViewController {
     private var buttonSignup:UIButton = {
         let button = UIButton()
         button.setTitle("SIGN UP", for: UIControlState.normal)
+        button.titleLabel?.font = UIFont(name: AppTheme().mainFontName(), size: 20)
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.textColor = UIColor.white
         button.layer.cornerRadius = 5;
@@ -50,6 +52,22 @@ class HomeViewController: BaseViewController {
         return button
     }()
     
+    private var buttonPlay:UIButton = {
+        let button = UIButton()
+        button.setTitle("PLAY", for: UIControlState.normal)
+        button.titleLabel?.font = UIFont(name: "Lato-Bold", size: 20)
+        button.titleLabel?.textAlignment = .center
+        button.titleLabel?.textColor = UIColor.white
+        button.imageView?.contentMode = .scaleAspectFit
+        button.layer.borderWidth = 10
+        button.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right:20)
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 100 // needs to be half width
+        button.layer.borderColor = UIColor.init(hexString: "#d4f2fa").cgColor;
+        button.backgroundColor = UIColor.init(hexString: "#54ccec")
+        button.addTarget(self, action: #selector(buttonPlay_touchUpInside), for: .touchUpInside)
+        return button
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
@@ -62,14 +80,29 @@ class HomeViewController: BaseViewController {
     
     // MARK: - Private API
     private func setup() {
+        let fontFamilyNames = UIFont.familyNames
+        for familyName in fontFamilyNames {
+            //Check the Font names of the Font Family
+            let names = UIFont.fontNames(forFamilyName: familyName )
+            // Write out the Font Famaily name and the Font's names of the Font Family
+            print("Font == \(familyName) \(names)")
+        }
+        
+        self.title = "Home"
+        
+        // Play button
+        self.view.addSubview(self.buttonPlay)
+        self.buttonPlay.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.height.equalTo(200)
+            make.width.equalTo(200)
+        }
         
         // message
         self.view.addSubview(self.labelMessage)
         self.labelMessage.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(10)
-            make.right.equalToSuperview().offset(-10)
-            make.center.equalToSuperview()
-            make.width.equalTo(300)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(self.buttonPlay.snp.bottom).offset(10)
         }
         
         // login button
@@ -110,7 +143,9 @@ class HomeViewController: BaseViewController {
     }
 
     @objc func buttonSignup_touchUpInside(sender:UIButton!) {
-        //self.navigateToWebView(withURLstring: "https://my.chatmatch.me/login/")
+        self.navigateToWebView(withURLstring: "https://my.chatmatch.me/login/")
+    }
+    @objc func buttonPlay_touchUpInside(sender:UIButton!) {
         self.playVideo()
     }
 }

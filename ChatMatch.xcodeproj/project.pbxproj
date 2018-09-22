@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		130F41E3215318BA00E71314 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130F41E2215318BA00E71314 /* SplashScreenViewController.swift */; };
+		13F261412156A45A00408125 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13F2613E2156A45A00408125 /* Lato-Italic.ttf */; };
+		13F261422156A45A00408125 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13F2613F2156A45A00408125 /* Lato-Regular.ttf */; };
+		13F261442156AFEB00408125 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13F261402156A45A00408125 /* Lato-Bold.ttf */; };
 		376862F693B36A31E9D65AD6 /* Pods_ChatMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AE9DB8892AD85AE0D34D1B /* Pods_ChatMatch.framework */; };
 		6C21C59B2155ADEE00FCEEAF /* howitworks.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6C21C59A2155ADEE00FCEEAF /* howitworks.mp4 */; };
 		6C9305C02152FA7100FCD286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9305BF2152FA7100FCD286 /* AppDelegate.swift */; };
@@ -28,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		130F41E2215318BA00E71314 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		13F2613E2156A45A00408125 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		13F2613F2156A45A00408125 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		13F261402156A45A00408125 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		6C21C59A2155ADEE00FCEEAF /* howitworks.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = howitworks.mp4; sourceTree = "<group>"; };
 		6C9305BC2152FA7100FCD286 /* ChatMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C9305BF2152FA7100FCD286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,9 +68,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13F2613D2156A3CC00408125 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				13F261402156A45A00408125 /* Lato-Bold.ttf */,
+				13F2613E2156A45A00408125 /* Lato-Italic.ttf */,
+				13F2613F2156A45A00408125 /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		6C21C5972155ADB300FCEEAF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				13F2613D2156A3CC00408125 /* Fonts */,
 				6C21C5982155ADD200FCEEAF /* Media */,
 				6C9305C82152FA7300FCD286 /* LaunchScreen.storyboard */,
 				6C9305C62152FA7300FCD286 /* Assets.xcassets */,
@@ -302,7 +319,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C9305CA2152FA7300FCD286 /* LaunchScreen.storyboard in Resources */,
+				13F261442156AFEB00408125 /* Lato-Bold.ttf in Resources */,
 				6C21C59B2155ADEE00FCEEAF /* howitworks.mp4 in Resources */,
+				13F261422156A45A00408125 /* Lato-Regular.ttf in Resources */,
+				13F261412156A45A00408125 /* Lato-Italic.ttf in Resources */,
 				6C9305C72152FA7300FCD286 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
