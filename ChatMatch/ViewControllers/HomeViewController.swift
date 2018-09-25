@@ -20,7 +20,7 @@ class HomeViewController: BaseViewController {
         label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
-        label.text = "How it works"
+        label.text = "See 'How it works' Video"
         return label
     }()
     
@@ -68,11 +68,30 @@ class HomeViewController: BaseViewController {
         button.addTarget(self, action: #selector(buttonPlay_touchUpInside), for: .touchUpInside)
         return button
     }()
+    
+    private var scrollView:UIScrollView = {
+       let scrollview = UIScrollView()
+        //scrollview.alwaysBounceVertical = true
+        return scrollview
+    }()
+    
+    fileprivate var imageViewBackground:UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "background")
+        return imageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,33 +99,47 @@ class HomeViewController: BaseViewController {
     
     // MARK: - Private API
     private func setup() {
-        let fontFamilyNames = UIFont.familyNames
-        for familyName in fontFamilyNames {
-            //Check the Font names of the Font Family
-            let names = UIFont.fontNames(forFamilyName: familyName )
-            // Write out the Font Famaily name and the Font's names of the Font Family
-            print("Font == \(familyName) \(names)")
-        }
         
         self.title = "Home"
         
-        // Play button
-        self.view.addSubview(self.buttonPlay)
-        self.buttonPlay.snp.makeConstraints { (make) in
+        self.view.addSubview(self.imageViewBackground)
+        self.imageViewBackground.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        // scrollview
+        self.view.addSubview(self.scrollView)
+        self.scrollView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
+        // content
+        let contentView = UIView()
+        self.scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
+            make.width.equalToSuperview()
+
+        }
+        
+        // Play button
+        contentView.addSubview(self.buttonPlay)
+        self.buttonPlay.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.centerX.equalToSuperview()
             make.height.equalTo(200)
             make.width.equalTo(200)
         }
         
         // message
-        self.view.addSubview(self.labelMessage)
+        contentView.addSubview(self.labelMessage)
         self.labelMessage.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(self.buttonPlay.snp.bottom).offset(10)
         }
         
         // login button
-        self.view.addSubview(self.buttonLogin)
+        contentView.addSubview(self.buttonLogin)
         self.buttonLogin.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
@@ -115,10 +148,11 @@ class HomeViewController: BaseViewController {
         }
         
         // signup button
-        self.view.addSubview(self.buttonSignup)
+        contentView.addSubview(self.buttonSignup)
         self.buttonSignup.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview()
             make.top.equalTo(self.buttonLogin.snp.bottom).offset(20)
             make.height.equalTo(50)
         }

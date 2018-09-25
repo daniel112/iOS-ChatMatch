@@ -11,6 +11,7 @@
 		13F261412156A45A00408125 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13F2613E2156A45A00408125 /* Lato-Italic.ttf */; };
 		13F261422156A45A00408125 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13F2613F2156A45A00408125 /* Lato-Regular.ttf */; };
 		13F261442156AFEB00408125 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13F261402156A45A00408125 /* Lato-Bold.ttf */; };
+		13F261462158023C00408125 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F261452158023C00408125 /* AppSettings.swift */; };
 		376862F693B36A31E9D65AD6 /* Pods_ChatMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72AE9DB8892AD85AE0D34D1B /* Pods_ChatMatch.framework */; };
 		6C21C59B2155ADEE00FCEEAF /* howitworks.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6C21C59A2155ADEE00FCEEAF /* howitworks.mp4 */; };
 		6C9305C02152FA7100FCD286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9305BF2152FA7100FCD286 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		13F2613E2156A45A00408125 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
 		13F2613F2156A45A00408125 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		13F261402156A45A00408125 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		13F261452158023C00408125 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		6C21C59A2155ADEE00FCEEAF /* howitworks.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = howitworks.mp4; sourceTree = "<group>"; };
 		6C9305BC2152FA7100FCD286 /* ChatMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C9305BF2152FA7100FCD286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				6C9305D8215307CF00FCD286 /* AppTheme.swift */,
+				13F261452158023C00408125 /* AppSettings.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			files = (
 				6C9305EC21530B6400FCD286 /* SideMenuItemSectionController.swift in Sources */,
 				6C9305D9215307CF00FCD286 /* AppTheme.swift in Sources */,
+				13F261462158023C00408125 /* AppSettings.swift in Sources */,
 				6C9305C02152FA7100FCD286 /* AppDelegate.swift in Sources */,
 				130F41E3215318BA00E71314 /* SplashScreenViewController.swift in Sources */,
 				6C9305F321530BB300FCD286 /* SideMenuItemCollectionViewCell.swift in Sources */,
@@ -526,7 +530,7 @@
 			baseConfigurationReference = C0B8D8DA7C4231ADD21E3D7D /* Pods-ChatMatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6W2A826YQJ;
 				INFOPLIST_FILE = ChatMatch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -534,8 +538,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chatMatch.ChatMatch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danielyo.ChatMatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Wildcard Dev";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -546,7 +551,7 @@
 			baseConfigurationReference = 87B5EF291AED7A40886F561D /* Pods-ChatMatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6W2A826YQJ;
 				INFOPLIST_FILE = ChatMatch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -554,8 +559,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chatMatch.ChatMatch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danielyo.ChatMatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Wildcard Dev";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

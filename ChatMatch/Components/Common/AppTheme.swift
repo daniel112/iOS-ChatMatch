@@ -10,7 +10,7 @@ import UIKit
 
 class AppTheme: NSObject {
     
-    public func mainColor() -> UIColor {
+    public func barColor() -> UIColor {
         return UIColor(hexString: "#42859f")
     }
     
@@ -19,7 +19,7 @@ class AppTheme: NSObject {
     }
     
     public func backgroundColor() -> UIColor {
-        return UIColor(hexString: "#0e6c85")
+        return UIColor(hexString: "#219fc1")
     }
     
     public func selectedItemColor() -> UIColor {

@@ -77,7 +77,7 @@ class SideMenuItemCollectionViewCell: UICollectionViewCell {
             // image
             self.wrapper.addSubview(self.imageView)
             self.imageView.snp.makeConstraints({ (make) in
-                make.top.left.equalToSuperview().offset(10)
+                make.left.equalToSuperview().offset(10)
                 make.centerY.equalToSuperview()
                 make.width.equalTo(24)
                 make.height.equalTo(24)

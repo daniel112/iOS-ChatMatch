@@ -22,9 +22,18 @@ class SideMenuViewController: UIViewController, ListAdapterDataSource, SideMenuO
     }()
     let collectionView: UICollectionView = {
         let view = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
-        view.backgroundColor = AppTheme().mainColor()
+        view.backgroundColor = AppTheme().backgroundColor()
         view.alwaysBounceVertical = true
         return view
+    }()
+    
+    lazy private var labelVersionBuild:UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: AppTheme().mainFontName(), size: 14)
+        label.textColor = UIColor.white
+        label.textAlignment = .center
+        label.text = "Version \(AppSettings().version!) Build \(AppSettings().build!)"
+        return label
     }()
     
     // MARK: Lifecycle
@@ -50,6 +59,14 @@ class SideMenuViewController: UIViewController, ListAdapterDataSource, SideMenuO
             make.edges.equalToSuperview()
         })
         
+        // footer
+        view.addSubview(self.labelVersionBuild)
+        self.labelVersionBuild.snp.makeConstraints({ (make) in
+            make.left.equalToSuperview()
+            make.width.equalTo(self.revealViewController().rearViewRevealWidth)
+            make.bottom.equalToSuperview().offset(-10)
+        })
+        
         //adapter
         self.adapter.collectionView = self.collectionView
         self.adapter.dataSource = self
@@ -58,14 +75,14 @@ class SideMenuViewController: UIViewController, ListAdapterDataSource, SideMenuO
     private func navigateToWebView(withURLstring urlString:String) {
         if let url = URL(string: urlString) {
             let vc = SFSafariViewController(url: url)
-            vc.preferredBarTintColor = AppTheme().mainColor()
+            vc.preferredBarTintColor = AppTheme().barColor()
             self.present(vc, animated: true)
         }
     }
     
     private func createSideMenuObjects() {
         //header
-        self.sideMenuObjects.append(SideMenuHeader.init(withName: "ChatMatch", image: nil)!)
+        self.sideMenuObjects.append(SideMenuHeader.init(withName: "ChatMatch", image: UIImage(named: "sidemenu_icon"))!)
         //options
         self.sideMenuObjects.append(SideMenuItem.init(withName: "Home", image: UIImage(named: "sidemenu_home"))!)
         self.sideMenuObjects.append(SideMenuItem.init(withName: "Website", image:UIImage(named: "sidemenu_desktop"))!)

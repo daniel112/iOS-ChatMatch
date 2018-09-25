@@ -19,7 +19,7 @@ class SideMenuHeaderCollectionViewCell: UICollectionViewCell {
     }
     public var image:UIImage? {
         get { return self.imageView.image }
-        set { self.imageView.image = newValue?.withRenderingMode(.alwaysTemplate) }
+        set { self.imageView.image = newValue }
     }
     fileprivate var revealWidth:CGFloat?
 
@@ -72,7 +72,7 @@ class SideMenuHeaderCollectionViewCell: UICollectionViewCell {
             // image
             self.wrapper.addSubview(self.imageView)
             self.imageView.snp.makeConstraints({ (make) in
-                make.top.equalToSuperview()
+                make.top.equalToSuperview().offset(15)
                 make.centerX.equalToSuperview()
                 make.width.equalTo(40)
                 make.height.equalTo(40)

@@ -12,6 +12,9 @@ import SafariServices
 
 class BaseViewController: UIViewController {
 
+    // MARK: Variables
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
@@ -51,7 +54,7 @@ class BaseViewController: UIViewController {
     internal func navigateToWebView(withURLstring urlString:String) {
         if let url = URL(string: urlString) {
             let vc = SFSafariViewController(url: url)
-            vc.preferredBarTintColor = AppTheme().mainColor()
+            vc.preferredBarTintColor = AppTheme().barColor()
             self.present(vc, animated: true)
         }
     }
