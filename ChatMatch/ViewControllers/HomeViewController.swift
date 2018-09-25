@@ -53,25 +53,15 @@ class HomeViewController: BaseViewController {
     }()
     
     private var buttonPlay:UIButton = {
-        let button = UIButton()
-        button.setTitle("PLAY", for: UIControlState.normal)
-        button.titleLabel?.font = UIFont(name: "Lato-Bold", size: 20)
-        button.titleLabel?.textAlignment = .center
-        button.titleLabel?.textColor = UIColor.white
-        button.imageView?.contentMode = .scaleAspectFit
-        button.layer.borderWidth = 10
-        button.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right:20)
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 100 // needs to be half width
-        button.layer.borderColor = UIColor.init(hexString: "#d4f2fa").cgColor;
-        button.backgroundColor = UIColor.init(hexString: "#54ccec")
+        let button = UIButton(type: UIButtonType.custom)
+        let image = UIImage(named: "home_video_button")
+        button.setImage(image, for: UIControlState.normal)
         button.addTarget(self, action: #selector(buttonPlay_touchUpInside), for: .touchUpInside)
         return button
     }()
     
     private var scrollView:UIScrollView = {
        let scrollview = UIScrollView()
-        //scrollview.alwaysBounceVertical = true
         return scrollview
     }()
     
@@ -102,15 +92,16 @@ class HomeViewController: BaseViewController {
         
         self.title = "Home"
         
-        self.view.addSubview(self.imageViewBackground)
-        self.imageViewBackground.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+//        self.view.addSubview(self.imageViewBackground)
+//        self.imageViewBackground.snp.makeConstraints { (make) in
+//            make.edges.equalToSuperview()
+//        }
         
         // scrollview
         self.view.addSubview(self.scrollView)
         self.scrollView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            //make.edges.equalToSuperview()
+            make.top.left.right.equalToSuperview()
         }
         
         // content
@@ -127,8 +118,8 @@ class HomeViewController: BaseViewController {
         self.buttonPlay.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
-            make.height.equalTo(200)
-            make.width.equalTo(200)
+            make.height.equalTo(300)
+            make.width.equalTo(300)
         }
         
         // message
