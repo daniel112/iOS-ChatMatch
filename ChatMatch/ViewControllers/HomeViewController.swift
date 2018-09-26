@@ -65,6 +65,11 @@ class HomeViewController: BaseViewController {
         return scrollview
     }()
     
+    private var contentView:UIView = {
+        let view = UIView()
+        return view
+    }()
+    
     fileprivate var imageViewBackground:UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -74,11 +79,12 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setup()
     }
 
     
     override func viewWillAppear(_ animated: Bool) {
+        self.setup()
+
     }
     override func viewWillDisappear(_ animated: Bool) {
     }
@@ -92,45 +98,42 @@ class HomeViewController: BaseViewController {
         
         self.title = "Home"
         
-//        self.view.addSubview(self.imageViewBackground)
-//        self.imageViewBackground.snp.makeConstraints { (make) in
-//            make.edges.equalToSuperview()
-//        }
+        self.view.addSubview(self.imageViewBackground)
+        self.imageViewBackground.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
         
         // scrollview
         self.view.addSubview(self.scrollView)
         self.scrollView.snp.makeConstraints { (make) in
-            //make.edges.equalToSuperview()
-            make.top.left.right.equalToSuperview()
+            make.edges.equalTo(self.view)
         }
-        
-        // content
-        let contentView = UIView()
-        self.scrollView.addSubview(contentView)
-        contentView.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-            make.width.equalToSuperview()
-
-        }
-        
         // Play button
-        contentView.addSubview(self.buttonPlay)
+        self.scrollView.addSubview(self.buttonPlay)
         self.buttonPlay.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset((self.view.frame.height / 2) - 300)
             make.centerX.equalToSuperview()
             make.height.equalTo(300)
             make.width.equalTo(300)
         }
-        
+
+        // content
+        self.scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.width.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+
         // message
-        contentView.addSubview(self.labelMessage)
+        self.contentView.addSubview(self.labelMessage)
         self.labelMessage.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(self.buttonPlay.snp.bottom).offset(10)
         }
         
         // login button
-        contentView.addSubview(self.buttonLogin)
+        self.contentView.addSubview(self.buttonLogin)
         self.buttonLogin.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
@@ -143,8 +146,8 @@ class HomeViewController: BaseViewController {
         self.buttonSignup.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
-            make.bottom.equalToSuperview()
             make.top.equalTo(self.buttonLogin.snp.bottom).offset(20)
+            make.bottom.lessThanOrEqualTo(self.contentView)
             make.height.equalTo(50)
         }
         
