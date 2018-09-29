@@ -23,9 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
 
         let navigationController:UINavigationController = UINavigationController.init(rootViewController: HomeViewController())
-        let rootVC = SWRevealViewController.init(rearViewController: SideMenuViewController(), frontViewController: navigationController)
-        
-        window!.rootViewController = rootVC!
+        //let rootVC = SWRevealViewController.init(rearViewController: SideMenuViewController(), frontViewController: navigationController)
+        let rootVC = navigationController
+        window!.rootViewController = rootVC
         
         window!.makeKeyAndVisible()
         

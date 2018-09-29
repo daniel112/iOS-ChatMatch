@@ -34,16 +34,17 @@ class BaseViewController: UIViewController {
         view.backgroundColor = AppTheme().backgroundColor()
         
         // Navigation - Menu Button
-        if (self.navigationController!.viewControllers[0] == self ) {
-            
-            let revealController:SWRevealViewController = self.revealViewController()
-            revealController.panGestureRecognizer()
-            revealController.tapGestureRecognizer()
-            let sideMenuButton = UIBarButtonItem(image: menuImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(buttonMenu_touchUpInside(sender:)))
-            sideMenuButton.tintColor = UIColor.white
-            self.navigationItem.leftBarButtonItem = sideMenuButton
-        }
-        self.navigationItem.backBarButtonItem = UIBarButtonItem()
+        // TODO: uncomment next update
+//        if (self.navigationController!.viewControllers[0] == self ) {
+//            
+//            let revealController:SWRevealViewController = self.revealViewController()
+//            revealController.panGestureRecognizer()
+//            revealController.tapGestureRecognizer()
+//            let sideMenuButton = UIBarButtonItem(image: menuImage, style: UIBarButtonItemStyle.plain, target: self, action: #selector(buttonMenu_touchUpInside(sender:)))
+//            sideMenuButton.tintColor = UIColor.white
+//            self.navigationItem.leftBarButtonItem = sideMenuButton
+//        }
+//        self.navigationItem.backBarButtonItem = UIBarButtonItem()
     }
 
     @objc func buttonMenu_touchUpInside(sender: UIBarButtonItem) {

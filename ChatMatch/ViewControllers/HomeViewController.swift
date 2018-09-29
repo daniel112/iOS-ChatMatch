@@ -111,16 +111,16 @@ class HomeViewController: BaseViewController {
         // Play button
         self.scrollView.addSubview(self.buttonPlay)
         self.buttonPlay.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset((self.view.frame.height / 2) - 300)
+            make.top.equalToSuperview().offset((self.view.frame.height / 2) - 250)
             make.centerX.equalToSuperview()
-            make.height.equalTo(300)
-            make.width.equalTo(300)
+            make.height.equalTo(250)
+            make.width.equalTo(250)
         }
 
         // content
         self.scrollView.addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
+            make.top.equalTo(self.buttonPlay.snp.bottom).offset(10)
             make.width.equalToSuperview()
             make.bottom.equalToSuperview()
         }
@@ -129,7 +129,7 @@ class HomeViewController: BaseViewController {
         self.contentView.addSubview(self.labelMessage)
         self.labelMessage.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.buttonPlay.snp.bottom).offset(10)
+            make.top.equalToSuperview()
         }
         
         // login button
